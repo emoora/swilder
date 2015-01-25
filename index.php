@@ -15,7 +15,7 @@ get_header(); ?>
 
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
-
+		<div id="category-featured" class="grid_7 grid_3">
 		<?php $my_query = new WP_Query( 'category_name=featured&posts_per_page=1' );
 		while ( $my_query->have_posts() ) : $my_query->the_post();
 		$do_not_duplicate = $post->ID; ?>
@@ -26,8 +26,9 @@ get_header(); ?>
 				<!-- Do stuff... -->
 
 <?php endwhile; ?>
+		</div>
 
-<div id="workContainer-left">
+<div id="workContainer-left" class="grid_6 grid_3">
 			<!-- Do other stuff... -->
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); 
 			if ( $post->ID == $do_not_duplicate ) continue; ?>
@@ -36,6 +37,7 @@ get_header(); ?>
 	
 			
 		<?php endwhile; endif; ?>
+
 		<!-- Begin Loop -->
 	</div>
 

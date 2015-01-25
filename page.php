@@ -13,7 +13,8 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="grid_12" role="main">
+			<!-- <div id="pageContainerLeft">  -->
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
@@ -22,14 +23,15 @@ get_header(); ?>
 			
 
 				<?php
+
 					// If comments are open or we have at least one comment, load up the comment template
 					if ( comments_open() || get_comments_number() ) :
 						comments_template();
 					endif;
 				?>
-
+			<!-- </div> -->
 			<?php endwhile; // end of the loop. ?>
-
+			<!-- <div id="pageContainerRight"></div> -->
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

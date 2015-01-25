@@ -68,6 +68,8 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 }
 
 html {
+	max-width: 100%;
+	max-height: 100%;
 	font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
 	overflow-y: scroll; /* Keeps page centered in all browsers regardless of content height */
 	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
@@ -149,14 +151,26 @@ input,
 select,
 textarea {
 	color: #404040;
-	font-family: sans-serif;
+	font-family: 'Noto Sans', sans-serif;
 	font-size: 16px;
 	font-size: 1.6rem;
-	line-height: 1.5;
+	/*line-height: 1.5;*/
 }
 
-h1,
-h2,
+h1 {
+	clear: both;
+	padding-bottom: 30px;
+	padding-left: 5px;
+	padding-top: 20px;
+	font-size: xx-large;
+	font-family: 'Noto Sans', sans-serif;
+}
+h2 {
+
+	font-size: 20px;
+	clear: both;
+
+}
 h3,
 h4,
 h5,
@@ -435,6 +449,7 @@ a:active {
 5.2 Menus
 --------------------------------------------------------------*/
 @import url("960_12_col.css");
+@import url("small-devices.css");
 
 .main-navigation {
 	clear: both;
@@ -503,42 +518,8 @@ a:active {
 .main-navigation .current_page_ancestor > a {
 }
 
-/* Small menu */
-.menu-toggle {
-	display: none;
-}
 
-@media screen and (max-width: 600px) {
-	.menu-toggle,
-	.main-navigation.toggled .nav-menu {
-		display: block;
-	}
 
-	.main-navigation ul {
-		display: none;
-	}
-}
-
-@media only screen and (max-device-width : 1024px) and (orientation : portrait) {
-
-body.blog article, body.archive article {
-width: 49%;
-}
-}
-
-@media only screen and (max-width : 768px) {
-
-body.blog article, body.archive article {
-width: 49%;
-}
-}
-
-@media only screen and (max-width : 480px) {
-
-body.blog article, body.archive article {
-width: 100%;
-}
-}@
 .site-main .comment-navigation,
 .site-main .paging-navigation,
 .site-main .post-navigation {
@@ -694,7 +675,7 @@ display:none;
 }
 
 .hentry {
-	margin: 0 0 1.5em;
+	/*margin: 0 0 1.5em;*/
 
 }
 
@@ -727,21 +708,35 @@ display:none;
 	margin: 0 0 1.5em;
 }
 
+/* single page customisation */
+
+.page-id-169 .post-169 {
+width: 100%;
+}
+
 /* Grid Layout Custom CSS */
 body.blog article, body.archive article {
 width: 50% !important;
-height: 400px;
 display: inline-block;
-vertical-align: top;
-text-align: left;
-margin-bottom: 0px;
-position: relative;
+margin-bottom: -30px;
+
 }
 
 
-.site-main {
+
+#main {
 display: flex;
 flex-direction: row-reverse;
+}
+
+.headerText {
+
+	
+}
+
+.description {
+	padding-left: 35px;
+	padding-bottom: 15px;
 }
 /*--------------------------------------------------------------
 10.2 Asides
@@ -868,10 +863,153 @@ object {
 
 
 *{margin:0;padding:0;box-sizing:border-box;}.frame{margin:0 auto;max-width:100%;}.frame:after{content:"";display:table;clear:both;}[class*='bit-']{float:left;padding:0.3em;}.bit-1{width:8.33333%;}.bit-2{width:16.66667%;}.bit-3{width:25%;}.bit-4{width:33.33333%;}.bit-5{width:41.66667%;}.bit-6{width:50%;}.bit-7{width:58.33333%;}.bit-8{width:66.66667%;}.bit-9{width:75%;}.bit-10{width:83.33333%;}.bit-11{width:91.66667%;}.bit-12{width:100%;}.bit-25{width:25%;}.bit-40{width:40%;}.bit-60{width:60%;}.bit-75{width:75%;}@media (max-width: 30em){.bit-1{width:100%;}.bit-2{width:100%;}.bit-3{width:100%;}.bit-4{width:100%;}.bit-5{width:100%;}.bit-6{width:100%;}.bit-7{width:100%;}.bit-8{width:100%;}.bit-9{width:100%;}.bit-10{width:100%;}.bit-11{width:100%;}.bit-12{width:100%;}}@media (min-width: 30em) and (max-width: 50em){.bit-4,.bit-6,.bit-8,.bit-10,.bit-12{width:50%;}.bit-1,.bit-2,.bit-3,.bit-5,.bit-7,.bit-9,.bit-11{width:100%;}}@media (min-width: 50em) and (max-width: 68.75em){.bit-2,.bit-7{width:100%;}.bit-4,.bit-8,.bit-10,.bit-12{width:50%;}}.box{background:#FCD920;font-family:"Futura",sans-serif;font-size:14px;text-align:center;padding:20px 0;}.box--new{background:#87D37C;}
-
+/*
 *---------------------Custom Css--------------------------
 *
 */
+
+.animDiv
+{
+  display:inline-block;
+  width: 57px;
+  height: 50px;
+  background: url(http://127.0.0.1:82/wordpress/wp-content/uploads/2014/12/ZSprite.png) ;
+  /*background-repeat: no-repeat;*/
+  position: relative;
+  float: left;
+}
+
+  .animDiv:hover
+  {
+  -webkit-animation-play-state:paused;
+  -webkit-animation: play 1s steps(21, start) backwards;  
+  background-position: 0px -1200px;
+  }
+
+.animDiv1
+{
+  display:inline-block;
+  width: 50px;
+  height: 50px;
+  background: url(http://127.0.0.1:82/wordpress/wp-content/uploads/2014/12/ASprite.png) ;
+  /*background-repeat: no-repeat;*/
+  position: relative;
+  float: left;
+}
+
+  .animDiv1:hover
+  {
+  -webkit-animation-play-state:paused;
+  -webkit-animation: play 1s steps(21, start) backwards;  
+  background-position: 0px -1200px;
+  }
+
+.animDiv2
+{
+  display:inline-block;
+  width: 50px;
+  height: 50px;
+  background: url(http://127.0.0.1:82/wordpress/wp-content/uploads/2014/12/Csprite.png) ;
+  /*background-repeat: no-repeat;*/
+  position: relative;
+  float: left;
+}
+  
+  .animDiv2:hover
+  {
+  -webkit-animation-play-state:paused;
+  -webkit-animation: play 1s steps(21, start) backwards;  
+  background-position: 0px -1200px;
+  }
+
+.animDiv3
+{
+  display:inline-block;
+  width: 45px;
+  height: 50px;
+  background: url(http://127.0.0.1:82/wordpress/wp-content/uploads/2014/12/Ksprite.png) ;
+  /*background-repeat: no-repeat;*/
+  position: relative;
+  float: left;
+}
+
+  .animDiv3:hover
+  {
+  -webkit-animation-play-state:paused;
+  -webkit-animation: play 1.5s steps(21, start) backwards;  
+  background-position: 0px -1200px;
+  }
+
+.animDiv4
+{
+  display:inline-block;
+  width: 50px;
+  height: 50px;
+  background: url(../img/ZSpriteV.png) ;
+  /*background-repeat: no-repeat;*/
+  position: relative;
+  float: left;
+}
+
+  .animDiv4:hover
+  {
+  -webkit-animation-play-state:paused;
+  -webkit-animation: play 1s steps(20, start) backwards;  
+  background-position: 0px -1267px;
+  }
+   
+@-webkit-keyframes play {
+  from {background-position: 0px 0px ;}
+  to {background-position: 0px -1267px;}
+}
+
+@keyframes play {
+  from {left: 0px;}
+  to {left: -1267px;}
+}
+
+.animationContainer {
+	width: 50%;
+	padding-top: 45px;
+	padding-left: 250px;
+}
+
+#pureMovie{ 
+}
+
+.pureSpace{
+	height: 146px;
+}
+
+
+#postTitle_1{
+	margin-right: 700px;
+	clear: both;
+	padding-bottom: 30px;
+	padding-left: 5px;
+	padding-top: 20px;
+	font-size: xx-large;
+	font-family: 'Noto Sans', sans-serif;
+
+}
+#postTitle_2 {
+	margin-right: 780px;
+	padding-left: 5px;
+	clear: both;
+	padding-bottom: 30px;
+	padding-top: 20px;
+	font-size: xx-large;
+	font-family: 'Noto Sans', sans-serif;
+}
+#postTitle_3 {
+	margin-right: 750px;
+	padding-left: 5px;
+	clear: both;
+	padding-bottom: 30px;
+	padding-top: 20px;
+	font-size: xx-large;
+	font-family: 'Noto Sans', sans-serif;
+}
 
 	.square{
 		width:300px;
@@ -933,20 +1071,22 @@ object {
 */
 
 body {
-  background-image: url( "http://127.0.0.1:82/wordpress/wp-content/uploads/2014/11/watercolor1.jpg");
-  width: 1600px;
-  height: auto;
+  max-width: 100%;
+  min-height: 100vh;
+  background-image: url(http://127.0.0.1:82/wordpress/wp-content/uploads/2014/12/zacksBackground.png);
   display: flex;
   flex-direction: column;
 }
 
+
+
 /* `Container
 ----------------------------------------------------------------------------------------------------*/
 
-.container_12 {
-  width: 1600px;
-  display: flex;
 
+#comments {
+	width: 0%;
+	display: none;
 }
 
 /* `Grid >> Global
@@ -964,9 +1104,6 @@ body {
 .grid_10,
 .grid_11,
 .grid_12 {
-  display: inline;
-  margin-left: 10px;
-  margin-right: 10px;
 }
 
 .push_1, .pull_1,
@@ -1013,6 +1150,101 @@ body {
   width: 300px;
 }
 
+.container_12 .grid_5 {
+  width: 380px;
+}
+
+.container_12 .grid_6 {
+  width: 460px;
+}
+
+.homeBanner{
+	max-width: 100%;
+	display: flex;
+	flex-direction: row;
+	
+}
+
+#gitHub {
+	background-image: url(http://127.0.0.1:82/wordpress/wp-content/uploads/2015/01/GitHub-Mark-32px.png);
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+
+}
+
+#gitHub a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+}
+
+#gitHub a:hover {
+
+}
+
+#soundCloud {
+	background-image: url(http://127.0.0.1:82/wordpress/wp-content/uploads/2015/01/Soundcloudcon.png);
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	margin-left: 5px;
+	margin-top: -37px;
+
+}
+
+#soundCloud a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+}
+
+#soundCloud a:hover {
+
+}
+
+#eMail {
+	background-image: url(http://127.0.0.1:82/wordpress/wp-content/uploads/2015/01/emailSml.png);
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	margin-left: 5px;
+	margin-top: -37px;
+}
+
+#eMail a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+}
+
+#email {
+
+}
+
+.socialMedia {
+	width: 50%;
+	padding-left: 35px;
+	padding-bottom: 30px;
+}
+
+
+.socialMedia iframe {
+	padding-left: 5px;
+	margin-top: 9px;
+	max-width: 100%;
+}
+
+
+#pageContainerRight {
+	display: inline-block;
+	width: 48%;
+	float: right;
+	padding-right: 20px;
+}
 
 #workContainer-right {
   width: 50%;
@@ -1021,12 +1253,16 @@ body {
   position: relative; 
 }
 
-.category-featured {
+#category-featured {
   width: 50%;
-  height: 400px;
   display: inline-block;
  }
 
+
+#pageContainerLeft {
+	width: 50%;
+	display: inline-block;
+}
 
 #workContainer-left {
   width: 50%;
@@ -1034,9 +1270,32 @@ body {
   flex-wrap: wrap;
 }
 
-.post {
-  background-color: #9D9D9D;
+.music_container {
+	max-width: 50%;
+	padding-top: 35px;
+	position: relative;
+    padding-bottom: 25.25%;
+    height: 0;
+    overflow: hidden;
 }
+
+.music_container iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	max-width:100%;
+	height:100%;
+}
+
+#video_container {
+	position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 35px;
+    height: 0;
+    overflow: hidden;
+
+}
+
 
 .container_12 .grid_7 {
   width: 540px;
@@ -1058,16 +1317,54 @@ body {
   width: 860px;
 }
 
-#headerH2_12 {
+.container_12 .grid_12 {
+  /*width: 940px;*/
+}
+
+
+.headName h1 {	
+  padding-bottom: 0px;	
+  padding-left: 30px;
+  padding-top: 20px;
+  font-size: 185px;
+  line-height: 190px;
+  color: white;
+}
+
+.banner-left{
+	max-width: 50%;
+	display: inline-block;
+}
+
+.banner-right{
+	max-width: 50%;
+	display: flex;
+}
+
+.banner-right-r {
+	max-width: 25%;
+	
+}
+
+.banner-right-l {
+	max-width: 25%;
+	padding-top: 40px;
+	padding-left: 40px;
+	
+}
+
+.banner-right-l:after {
+	content: url(http://127.0.0.1:82/wordpress/wp-content/uploads/2015/01/medFaceCircle.png);
+}
+
+
+.site-footer, #page:after {
   width: 100%;
-  background-color: #E0E0E0;
-  min-height: 400px
+  height: 42px;
 }
 
 .site-footer {
-width: 100%;
-  background-color: #181818;
-  min-height: 42px;
+	background-color: #181818;
 }
 /* `Prefix Extra Space >> 12 Columns
 ----------------------------------------------------------------------------------------------------*/
@@ -1304,6 +1601,141 @@ width: 100%;
 .container_12 {
   zoom: 1;
 }
+#page{
+	margin-bottom: -42px;
+	flex: 1;
+	min-height: 100%;
+  	width: 100%;
+  	padding-top: 5px;
+}
+
+#page:after {
+  content: "";
+  display: block;
+}
+
+#content{
+	height: 100%;
+    width: 100%;
+}
+
+/*-------------------------- Mobile ------------------------*/
+
+/* Small menu */
+.menu-toggle {
+	display: none;
+}
+
+@media screen and (max-width: 600px) {
+	.menu-toggle,
+	.main-navigation.toggled .nav-menu {
+		display: block;
+	}
+
+	.main-navigation ul {
+		display: none;
+	}
+}
+
+@media only screen and (max-device-width : 1024px) and (orientation : portrait) {
+
+body.blog article, body.archive article {
+width: 49%;
+}
+}
+
+@media only screen and (min-width : 768px) and (max-width: 1589px) {
+
+/* Resize Body */
+body { min-width: 767px; }
+
+.banner-left{
+		max-width: 100%;
+		display: inline-block;
+	}
+
+}
+
+@media only screen and (min-width : 320px) and (max-width: 767px) {
+
+	/*---------Front Page ---------- */
+	body{ min-width: 319px; }
+	#main { display: inline-block; }
+	#workContainer-left { 
+		min-width : 100%;
+		margin-top: -5px; }
+	#category-featured { 
+		min-width: 100%;
+		margin-bottom: -40px; }
+	.headerH2_12 {
+		max-width: 125px;
+		max-height: 405px;
+		margin-bottom: 2px;
+		}
+	.headerText { min-width: 100% }
+
+	.homeBanner{
+		max-width: 100%;
+		display: flex;
+		flex-direction : column-reverse;
+	}
+
+	.banner-right{
+		max-width: 100%;
+		display: flex;
+		padding-left: 40px;
+	}
+
+	.banner-left{
+		max-width: 100%;
+		display: inline-block;
+		margin-left: -35px;
+	}
+
+	.records h1 {
+		margin-right: 1317px;
+	}
+
+	.headName h1 {	
+  		padding-bottom: 0px;	
+  		padding-left: 30px;
+  		padding-top: 20px;
+  		font-size: 185px;
+  		line-height: 190px;
+  		color: white;
+}
+
+	/*----------Pages ----------------*/
+
+	#pageContainerRight { 
+		width: 100%;
+		float: none; 
+		padding-left: 5px;
+		}
+
+	.music_container {
+		max-width: 100%;
+		padding-top: 35px;
+		position: relative;
+	    padding-bottom: 25.25%;
+	    height: 0;
+	    overflow: hidden;
+		}
+
+	#pureMovie{ 
+		width : 100%;
+		}
+
+	.animationContainer {
+	display: -webkit-inline-box;
+	margin-left: -160px;
+	width: 100%;
+	padding-top: 45px;
+	padding-bottom: 45px;
+	}			
+}
+  
+
 
 
 

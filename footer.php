@@ -6,9 +6,9 @@
  *
  * @package swilder
  */
-?>
-
+?>	</div><!-- wrap -->
 	</div><!-- #content -->
+    </div><!-- #page -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
@@ -18,7 +18,7 @@
 		</div>
 	</div><!-- .site-info -->
 	</footer><!-- #colophon -->
-</div><!-- #page -->
+
 
 <?php wp_footer(); ?>
 
